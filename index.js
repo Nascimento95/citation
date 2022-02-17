@@ -22,25 +22,28 @@ let citations = [
     ["Vous n’êtes jamais trop vieux pour vous fixer de nouveaux buts, ou rendre vos rêves réalité.", "C.S. Lewis"],
     ["Un pessimiste voit la difficulté dans chaque opportunité. Un optimiste voit une opportunité dans chaque difficulté.", "Winston Churchill"]
 ];
-let dernier = 0;
-let numAleatoire = random()
-console.log("ok",numAleatoire)
+// mes variable pour la comparaison dans while
+let dernierCitation = 0;
+let numAleatoire = 0;
+
+//ma function que j'appel au click 
 function clickCitation() {
-    // console.log("mon click marche", random())
     do {
-        p.innerHTML = `${citations[random()][0]}`
-        pAuteur.innerHTML = `${citations[random()][1]}`
+        numAleatoire = random()
+    } while (numAleatoire == dernierCitation);
 
-    } while (random === dernier);
+    p.textContent       = `"${citations[numAleatoire][0]}"`
+    pAuteur.innerHTML   = `${citations[numAleatoire][1]}`
+    dernierCitation             = numAleatoire
 }
-
+// ma function random
 function random(){
     return Math.floor(Math.random() * (citations.length - 1))
 }
-
+// selection des éléments du Dom
 let div     = document.querySelector('.citation')
 let p       = document.querySelector('.p-citation')
 let pAuteur = document.querySelector('.auteur')
 let button  = document.querySelector('button')
-
+// je déclare un event (click) sur mon button 
 button.addEventListener("click", clickCitation)

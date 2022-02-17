@@ -1,7 +1,9 @@
-* {
-    margin: "0px";
-    padding: "0px"
+body{
+    margin: 0px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 
 .head {
     color : white;
@@ -46,6 +48,8 @@ button{
     background: linear-gradient(to right , rgb(26, 26, 240), rgb(216, 34, 216));
 }
 .p-citation{
+    font-family:'Satisfy', curve, Arial, Helvetica, sans-serif ;
+    font-size: 18px ;
     width: 350px;
     text-align:center;
 }
